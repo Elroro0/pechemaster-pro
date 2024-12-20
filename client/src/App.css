@@ -1,0 +1,819 @@
+/* Variables */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --text-color: #2c3e50;
+  --light-gray: #f8f9fa;
+  --border-gray: #e9ecef;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --section-spacing: 3rem;
+  --container-padding: 2rem;
+}
+
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-color);
+  background-color: #FFFFFF; /* Fond clair par défaut */
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Section Spacing */
+section {
+  margin-bottom: var(--section-spacing);
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--border-gray);
+  margin: var(--section-spacing) 0;
+}
+
+/* Hero Section */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-title {
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-button {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #2F7AE5;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-shadow: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+  background-color: #2362b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Section */
+.search-section {
+  background-color: white;
+  padding: 2rem 0;
+  margin-bottom: var(--section-spacing);
+  box-shadow: var(--box-shadow);
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.search-bar {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 1.2rem 1rem 1.2rem 3rem;
+  border: 2px solid var(--border-gray);
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+.popular-searches {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.search-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  background-color: var(--light-gray);
+  border-radius: 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.search-tag:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Module Cards */
+.modules-section {
+  padding: 40px 20px;
+  background-color: var(--light-gray);
+}
+
+.modules-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.module-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.module-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.module-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.module-card:hover .module-image {
+  transform: scale(1.05);
+}
+
+.module-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.module-icon {
+  font-size: 2.5rem;
+  color: white;
+  opacity: 0.9;
+}
+
+.module-content {
+  padding: 20px;
+}
+
+.module-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.module-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+.module-difficulty {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Badges de difficulté */
+.difficulty-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.difficulty-badge.facile {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.difficulty-badge.intermediaire {
+  background-color: #FF9800;
+  color: white;
+}
+
+.difficulty-badge.difficile {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Featured Sections */
+.featured-section {
+  margin: var(--section-spacing) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Weather Widget */
+.weather-widget {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.weather-widget h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-icon {
+  font-size: 3.5rem;
+  color: var(--secondary-color);
+}
+
+.weather-details {
+  font-size: 1.1rem;
+}
+
+/* Featured Fish */
+.featured-fish {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: left;
+}
+
+.featured-fish h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.featured-fish-image-container {
+  position: relative;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.featured-fish img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.featured-fish-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+}
+
+.featured-fish-info {
+  margin-top: 1rem;
+}
+
+.featured-fish-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.featured-fish-button:hover {
+  background-color: #2980b9;
+}
+
+/* Seasonal Tips */
+.seasonal-tips {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.seasonal-tips h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.current-date {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  color: var(--secondary-color);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.tip-icon {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+/* Quick Links */
+.quick-links {
+  margin: var(--section-spacing) 0;
+}
+
+.quick-links h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.quick-link-item {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.quick-link-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.quick-link-item svg {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: inherit;
+}
+
+.quick-link-item span {
+  font-weight: 500;
+}
+
+/* Guide des Poissons */
+.fish-guide-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.guide-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.guide-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.guide-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.search-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.family-filter {
+  position: relative;
+  min-width: 200px;
+}
+
+.family-filter select {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  appearance: none;
+  background-color: white;
+}
+
+.filter-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.fish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.fish-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fish-card:hover {
+  transform: translateY(-4px);
+}
+
+.fish-image-container {
+  position: relative;
+  padding-top: 66.67%; /* 3:2 aspect ratio */
+}
+
+.fish-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fish-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+}
+
+.fish-overlay h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.scientific-name {
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.fish-info {
+  padding: 1rem;
+}
+
+.fish-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.fish-size {
+  color: var(--text-secondary);
+}
+
+.fish-family {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.fish-season {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Fish Details Page */
+.fish-details-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.fish-details-header {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.fish-details-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.fish-details-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.fish-main-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.fish-characteristics {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.characteristic-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fish-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.detail-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detail-card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.feeding-preferences ul,
+.habitat-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.feeding-preferences li,
+.habitat-info li {
+  padding: 0.25rem 0;
+}
+
+.seasonal-tips-section {
+  margin-top: 2rem;
+}
+
+.seasonal-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.season-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.season-card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.season-card .behavior {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.tips-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 2rem;
+    --container-padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section {
+    height: 50vh;
+  }
+  
+  .module-card {
+    margin-bottom: 1rem;
+  }
+
+  .featured-section {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fish-main-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-filters {
+    flex-direction: column;
+  }
+  
+  .search-bar,
+  .family-filter {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar input {
+    padding: 1rem 1rem 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}
