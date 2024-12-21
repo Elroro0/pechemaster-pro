@@ -18,27 +18,21 @@ const modules = [
     title: 'Guide des Poissons',
     description: 'Découvrez les différentes espèces de poissons de nos eaux douces.',
     image: fishGuideImg,
-    link: '/fish-guide',
-    icon: <FaFish />,
-    difficulty: 'Facile'
+    link: '/fish-guide'
   },
   {
     id: 2,
     title: 'Techniques de Pêche',
     description: 'Maîtrisez les techniques essentielles pour une pêche réussie.',
     image: fishingTechniqueImg,
-    link: '/catalog',
-    icon: <FaBookOpen />,
-    difficulty: 'Intermédiaire'
+    link: '/catalog'
   },
   {
     id: 3,
     title: 'Météo & Conditions',
     description: 'Consultez les conditions météorologiques optimales pour la pêche.',
     image: weatherImg,
-    link: '/weather',
-    icon: <WiDaySunny />,
-    difficulty: ''
+    link: '/weather'
   }
 ];
 
@@ -119,26 +113,22 @@ function Home() {
         </div>
       </section>
 
-      {/* Modules Section */}
+      {/* Main Modules Section */}
       <section className="modules-section">
-        <div className="modules-grid">
-          {modules.map((module) => (
-            <Link to={module.link} key={module.id} className="module-card">
-              <div className="module-image-container">
-                <img src={module.image} alt={module.title} className="module-image" />
-                <div className="module-overlay">
-                  <div className="module-icon">{module.icon}</div>
+        <div className="container">
+          <div className="modules-grid">
+            {modules.map((module) => (
+              <Link to={module.link} key={module.id} className="module-card">
+                <div className="module-image-container">
+                  <img src={module.image} alt={module.title} className="module-image" />
                 </div>
-              </div>
-              <div className="module-content">
-                <h3 className="module-title">{module.title}</h3>
-                <p className="module-description">{module.description}</p>
-                {module.difficulty && (
-                  <span className="module-difficulty">{module.difficulty}</span>
-                )}
-              </div>
-            </Link>
-          ))}
+                <div className="module-content">
+                  <h3 className="module-title">{module.title}</h3>
+                  <p className="module-description">{module.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
