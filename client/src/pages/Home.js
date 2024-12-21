@@ -10,7 +10,7 @@ import fishingTechniqueImg from '../assets/images/fishin-technique.jpeg';
 import lureFishingImg from '../assets/images/lure-fishing.jpeg';
 
 // Image de fond du hero
-const HERO_BG = '/images/home-bg.jpg';
+const HERO_BG = '/images/hero-bg.jpg';
 
 const modules = [
   {
