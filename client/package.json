@@ -2,7 +2,7 @@
   "name": "pechemaster-pro-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://elroro0.github.io/pechemaster-pro",
+  "homepage": "https://elroro0.github.io/pechemaster-pro/",
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@testing-library/jest-dom": "^5.17.0",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
