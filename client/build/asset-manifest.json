@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/pechemaster-pro/static/css/main.8a66c2bd.css",
+    "main.js": "/pechemaster-pro/static/js/main.50df36ed.js",
+    "static/media/weather.jpeg": "/pechemaster-pro/static/media/weather.954f284934f88695973a.jpeg",
+    "static/media/lure-fishing.jpeg": "/pechemaster-pro/static/media/lure-fishing.0f8f484c4271b2f373e7.jpeg",
+    "static/media/fishin-technique.jpeg": "/pechemaster-pro/static/media/fishin-technique.d18d984e2a6776466264.jpeg",
+    "static/media/fish-guide.jpg": "/pechemaster-pro/static/media/fish-guide.936c5d6d189d1e9c8151.jpg",
+    "index.html": "/pechemaster-pro/index.html",
+    "main.8a66c2bd.css.map": "/pechemaster-pro/static/css/main.8a66c2bd.css.map",
+    "main.50df36ed.js.map": "/pechemaster-pro/static/js/main.50df36ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a66c2bd.css",
+    "static/js/main.50df36ed.js"
+  ]
+}
