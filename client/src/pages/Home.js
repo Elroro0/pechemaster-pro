@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaSearch, FaFish, FaBookOpen, FaMapMarkerAlt, FaRegClock, FaSun, FaWater, FaCalendarAlt } from 'react-icons/fa';
+import { WiDaySunny, WiStrongWind, WiBarometer } from 'react-icons/wi';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import weatherImg from '../assets/images/weather.jpeg';
@@ -35,10 +37,10 @@ const modules = [
 ];
 
 const quickLinks = [
-  { id: 1, title: 'Top 10 Poissons', link: '/top-fish' },
-  { id: 2, title: 'Guide Débutant', link: '/beginner' },
-  { id: 3, title: 'Spots Populaires', link: '/spots' },
-  { id: 4, title: 'Réglementation', link: '/rules' }
+  { id: 1, title: 'Top 10 Poissons', link: '/top-fish', icon: <FaFish /> },
+  { id: 2, title: 'Guide Débutant', link: '/beginner', icon: <FaBookOpen /> },
+  { id: 3, title: 'Spots Populaires', link: '/spots', icon: <FaMapMarkerAlt /> },
+  { id: 4, title: 'Réglementation', link: '/rules', icon: <FaRegClock /> }
 ];
 
 const featuredFish = {
@@ -49,12 +51,13 @@ const featuredFish = {
 };
 
 const seasonalTips = [
-  { tip: 'Privilégiez la pêche en début de matinée' },
-  { tip: 'Les poissons sont plus actifs près des berges' },
-  { tip: 'Utilisez des leurres de surface' }
+  { icon: <FaSun />, tip: 'Privilégiez la pêche en début de matinée' },
+  { icon: <FaWater />, tip: 'Les poissons sont plus actifs près des berges' },
+  { icon: <FaCalendarAlt />, tip: 'Utilisez des leurres de surface' }
 ];
 
 const dailyTip = {
+  icon: <FaFish />,
   tip: "Astuce du jour : Les poissons sont plus actifs pendant les changements de pression atmosphérique."
 };
 
@@ -85,12 +88,12 @@ function Home() {
       <section className="search-section">
         <div className="container">
           <div className="search-bar">
+            <FaSearch className="search-icon" />
             <input
               type="text"
               placeholder="Rechercher une espèce, une technique..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="search-input"
             />
           </div>
           <div className="popular-searches">
@@ -105,6 +108,7 @@ function Home() {
       {/* Daily Tip */}
       <section className="container">
         <div className="tip-of-day">
+          <div className="tip-icon">{dailyTip.icon}</div>
           <p>{dailyTip.tip}</p>
         </div>
       </section>
@@ -135,10 +139,11 @@ function Home() {
           <div className="weather-widget">
             <h3>Météo Locale</h3>
             <div className="weather-info">
+              <WiDaySunny className="weather-icon" />
               <div className="weather-details">
-                <p>22°C</p>
-                <p>12 km/h</p>
-                <p>1015 hPa</p>
+                <p><WiDaySunny /> 22°C</p>
+                <p><WiStrongWind /> 12 km/h</p>
+                <p><WiBarometer /> 1015 hPa</p>
               </div>
             </div>
           </div>
@@ -165,10 +170,11 @@ function Home() {
           <div className="seasonal-tips">
             <h3>Conseils de Saison</h3>
             <div className="current-date">
-              {currentDate}
+              <FaCalendarAlt /> {currentDate}
             </div>
             {seasonalTips.map((tip, index) => (
               <div key={index} className="tip-item">
+                <span className="tip-icon">{tip.icon}</span>
                 <span>{tip.tip}</span>
               </div>
             ))}
@@ -183,6 +189,7 @@ function Home() {
           <div className="quick-links-grid">
             {quickLinks.map((link) => (
               <Link key={link.id} to={link.link} className="quick-link-item">
+                {link.icon}
                 <span>{link.title}</span>
               </Link>
             ))}
